@@ -1,0 +1,1401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Pinnacle — Otford, NSW</title>
+  <meta name="description" content="A prestige luxury holiday retreat on the Northern Illawarra Coast. 6 bedrooms, 25m infinity pool, panoramic ocean views. 1 hour from Sydney." />
+
+  <!-- ── Open Graph (social sharing previews) ── -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:title"       content="The Pinnacle — Luxury Holiday Retreat, Otford NSW" />
+  <meta property="og:description" content="6 bedrooms · 25m infinity pool · 200° ocean views · 2.4 acres. 1 hour from Sydney on the Northern Illawarra Coast." />
+  <meta property="og:image"       content="https://view.com.au/viewstatic/images/listing/6-bedroom-house-in-otford-nsw-2508/800-w/15991165-1-004CB6E.jpg" />
+  <meta property="og:url"         content="" /><!-- add your live URL here -->
+  <meta name="twitter:card"       content="summary_large_image" />
+  <meta name="twitter:title"      content="The Pinnacle — Luxury Holiday Retreat, Otford NSW" />
+  <meta name="twitter:description" content="6 bedrooms · 25m infinity pool · 200° ocean views. 1 hour from Sydney." />
+  <meta name="twitter:image"      content="https://view.com.au/viewstatic/images/listing/6-bedroom-house-in-otford-nsw-2508/800-w/15991165-1-004CB6E.jpg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@200;300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ocean:   #0B1828;
+      --slate:   #162236;
+      --deep:    #080F1A;
+      --gold:    #C8A96C;
+      --gold-lt: #E4CA96;
+      --ivory:   #F5F0E8;
+      --mist:    #8FA3B0;
+      --white:   #FFFFFF;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+      max-width: 100%;
+    }
+    body {
+      background: var(--ocean);
+      color: var(--ivory);
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      overflow-x: hidden;
+      max-width: 100%;
+      width: 100%;
+    }
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 28px 64px;
+      transition: background 0.4s, padding 0.3s;
+    }
+    nav.scrolled {
+      background: rgba(8,15,26,0.96);
+      backdrop-filter: blur(14px);
+      padding: 16px 64px;
+      border-bottom: 1px solid rgba(200,169,108,0.15);
+    }
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem; font-weight: 400;
+      letter-spacing: 0.3em; text-transform: uppercase;
+      color: var(--gold); text-decoration: none;
+    }
+    .nav-links { display: flex; gap: 40px; list-style: none; }
+    .nav-links a {
+      font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--ivory); text-decoration: none; opacity: 0.72;
+      transition: opacity 0.2s, color 0.2s;
+    }
+    .nav-links a:hover { opacity: 1; color: var(--gold); }
+    .nav-book {
+      font-size: 0.7rem; font-weight: 500; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--deep); background: var(--gold);
+      padding: 11px 28px; text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .nav-book:hover { background: var(--gold-lt); transform: translateY(-1px); }
+
+    /* ─── HERO ─── */
+    .hero {
+      position: relative; height: 100vh; min-height: 680px; overflow: hidden;
+    }
+    /* Video hero */
+    .hero-video-wrap {
+      position: absolute; inset: 0; overflow: hidden;
+    }
+    .hero-video-wrap iframe {
+      position: absolute;
+      top: 50%; left: 50%; transform: translate(-50%, -50%);
+      width: 177.78vh; height: 100vh;
+      min-width: 100%; min-height: 56.25vw;
+      pointer-events: none; border: none;
+    }
+    /* Fallback photo shown until video loads */
+    .hero-img {
+      position: absolute; inset: 0; width: 100%; height: 100%;
+      object-fit: cover; object-position: center 60%;
+      animation: heroZoom 10s ease-out forwards;
+      z-index: 1;
+      transition: opacity 1s ease;
+    }
+    .hero-img.hidden { opacity: 0; pointer-events: none; }
+    @keyframes heroZoom {
+      from { transform: scale(1.12); }
+      to   { transform: scale(1.00); }
+    }
+    .hero-overlay {
+      position: absolute; inset: 0; z-index: 2;
+      background: linear-gradient(160deg,
+        rgba(8,15,26,0.30) 0%,
+        rgba(8,15,26,0.10) 35%,
+        rgba(8,15,26,0.78) 100%);
+    }
+    .hero-content {
+      position: absolute; bottom: 88px; left: 64px; right: 64px;
+      max-width: 860px; z-index: 3;
+    }
+    .hero-eyebrow {
+      display: block; font-size: 0.68rem; letter-spacing: 0.32em;
+      text-transform: uppercase; color: var(--gold); margin-bottom: 18px;
+      opacity: 0; animation: fadeUp 1s ease 0.4s forwards;
+    }
+    .hero-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(4rem, 8vw, 8rem); font-weight: 300;
+      line-height: 0.92; color: var(--white); margin-bottom: 28px;
+      opacity: 0; animation: fadeUp 1s ease 0.7s forwards;
+    }
+    .hero-title em { font-style: italic; color: var(--gold-lt); }
+    .hero-sub {
+      font-size: 0.82rem; letter-spacing: 0.12em;
+      color: rgba(245,240,232,0.7); margin-bottom: 40px;
+      opacity: 0; animation: fadeUp 1s ease 1.0s forwards;
+    }
+    .hero-cta {
+      display: inline-flex; align-items: center; gap: 14px;
+      background: var(--gold); color: var(--deep); text-decoration: none;
+      font-size: 0.72rem; font-weight: 500; letter-spacing: 0.22em;
+      text-transform: uppercase; padding: 17px 40px;
+      opacity: 0; animation: fadeUp 1s ease 1.3s forwards;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .hero-cta:hover { background: var(--gold-lt); transform: translateY(-2px); }
+    .hero-scroll-indicator {
+      position: absolute; bottom: 36px; right: 64px;
+      display: flex; flex-direction: column; align-items: center; gap: 10px;
+      z-index: 3; opacity: 0; animation: fadeIn 1s ease 2.2s forwards;
+    }
+    .hero-scroll-indicator span {
+      font-size: 0.58rem; letter-spacing: 0.25em; text-transform: uppercase;
+      color: var(--mist); writing-mode: vertical-rl;
+    }
+    .scroll-line {
+      width: 1px; height: 56px;
+      background: linear-gradient(to bottom, var(--gold), transparent);
+      animation: lineDown 2.2s ease-in-out infinite;
+    }
+    @keyframes lineDown {
+      0%   { transform: scaleY(0); transform-origin: top; opacity: 1; }
+      50%  { transform: scaleY(1); transform-origin: top; opacity: 1; }
+      51%  { transform: scaleY(1); transform-origin: bottom; }
+      100% { transform: scaleY(0); transform-origin: bottom; opacity: 0.4; }
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(32px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; } to { opacity: 1; }
+    }
+
+    /* ─── STATS BAR ─── */
+    .stats-bar {
+      background: var(--slate);
+      border-top: 1px solid rgba(200,169,108,0.18);
+      border-bottom: 1px solid rgba(200,169,108,0.18);
+      display: flex; justify-content: center; flex-wrap: wrap;
+    }
+    .stat-item {
+      display: flex; flex-direction: column; align-items: center;
+      padding: 32px 56px; position: relative;
+    }
+    .stat-item + .stat-item::before {
+      content: ''; position: absolute;
+      left: 0; top: 22%; height: 56%;
+      width: 1px; background: rgba(200,169,108,0.2);
+    }
+    .stat-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.6rem; font-weight: 300; color: var(--gold); line-height: 1;
+    }
+    .stat-label {
+      font-size: 0.62rem; letter-spacing: 0.22em;
+      text-transform: uppercase; color: var(--mist); margin-top: 6px;
+    }
+
+    /* ─── SHARED ─── */
+    .section { padding: 110px 64px; }
+    .eyebrow {
+      display: block; font-size: 0.62rem; letter-spacing: 0.32em;
+      text-transform: uppercase; color: var(--gold); margin-bottom: 16px;
+    }
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.4rem, 4.5vw, 4rem); font-weight: 300;
+      line-height: 1.12; color: var(--ivory); margin-bottom: 44px;
+    }
+    .section-title em { font-style: italic; color: var(--gold-lt); }
+    .body-text {
+      font-size: 0.97rem; line-height: 1.9;
+      color: rgba(245,240,232,0.68); margin-bottom: 18px;
+    }
+
+    /* ─── EXPERIENCE ─── */
+    .experience-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 88px; align-items: start;
+    }
+    .highlights { display: flex; flex-direction: column; gap: 34px; padding-top: 8px; }
+    .highlight { border-left: 2px solid var(--gold); padding-left: 26px; }
+    .highlight-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem; font-weight: 400; color: var(--ivory); margin-bottom: 8px;
+    }
+    .highlight-desc { font-size: 0.82rem; line-height: 1.78; color: rgba(245,240,232,0.6); }
+
+    /* ─── GALLERY ─── */
+    .gallery-section { background: var(--deep); }
+    .gallery-header { padding: 110px 64px 56px; }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      grid-template-rows: 360px 240px 240px;
+      gap: 4px;
+    }
+    .g-item { overflow: hidden; position: relative; background: var(--slate); cursor: pointer; }
+    .g-item:nth-child(1) { grid-row: 1 / 4; }
+    .g-item:nth-child(8) { grid-column: 2 / 4; }
+    .g-item img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+      transition: transform 0.9s cubic-bezier(0.25,0.46,0.45,0.94);
+    }
+    .g-item:hover img { transform: scale(1.06); }
+    .g-item-overlay {
+      position: absolute; inset: 0; background: rgba(8,15,26,0);
+      transition: background 0.4s;
+    }
+    .g-item:hover .g-item-overlay { background: rgba(8,15,26,0.28); }
+    .g-label {
+      position: absolute; bottom: 16px; left: 18px;
+      font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase;
+      color: rgba(245,240,232,0.55); opacity: 0; transition: opacity 0.3s;
+    }
+    .g-item:hover .g-label { opacity: 1; }
+
+    /* ─── LIGHTBOX ─── */
+    .lightbox {
+      display: none; position: fixed; inset: 0; z-index: 1000;
+      background: rgba(5,10,18,0.97);
+      align-items: center; justify-content: center;
+    }
+    .lightbox.open { display: flex; }
+    .lightbox-inner {
+      position: relative; max-width: 90vw; max-height: 88vh;
+      display: flex; align-items: center; gap: 0;
+    }
+    .lightbox img {
+      max-width: 82vw; max-height: 82vh;
+      object-fit: contain; display: block;
+      border: 1px solid rgba(200,169,108,0.18);
+    }
+    .lb-btn {
+      position: absolute; top: 50%; transform: translateY(-50%);
+      background: rgba(200,169,108,0.14); border: 1px solid rgba(200,169,108,0.3);
+      color: var(--gold); width: 52px; height: 52px;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer; font-size: 1.2rem; transition: background 0.2s;
+      user-select: none; z-index: 2;
+    }
+    .lb-btn:hover { background: rgba(200,169,108,0.28); }
+    .lb-prev { left: -70px; }
+    .lb-next { right: -70px; }
+    .lb-close {
+      position: absolute; top: -52px; right: 0;
+      background: none; border: none; color: var(--mist);
+      font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase;
+      cursor: pointer; padding: 8px; transition: color 0.2s;
+    }
+    .lb-close:hover { color: var(--gold); }
+    .lb-counter {
+      position: absolute; bottom: -36px; left: 50%; transform: translateX(-50%);
+      font-size: 0.65rem; letter-spacing: 0.2em; color: var(--mist);
+    }
+
+    /* ─── AMENITIES ─── */
+    .amenities-section { background: var(--slate); }
+    .amenities-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 52px 40px; margin-top: 56px;
+    }
+    .amenity { display: flex; flex-direction: column; gap: 14px; }
+    .amenity-icon {
+      width: 50px; height: 50px;
+      border: 1px solid rgba(200,169,108,0.35);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--gold); flex-shrink: 0;
+    }
+    .amenity-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.18rem; font-weight: 400; color: var(--ivory);
+    }
+    .amenity-desc { font-size: 0.78rem; line-height: 1.72; color: var(--mist); }
+
+    /* ─── THINGS TO DO ─── */
+    .todo-section { background: var(--ocean); }
+    .todo-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 2px; margin-top: 56px;
+    }
+    .todo-card {
+      position: relative; overflow: hidden; height: 380px; cursor: default;
+    }
+    .todo-card img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+      transition: transform 0.8s cubic-bezier(0.25,0.46,0.45,0.94);
+      filter: brightness(0.72) saturate(0.85);
+    }
+    .todo-card:hover img { transform: scale(1.05); filter: brightness(0.82) saturate(1); }
+    .todo-card-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(8,15,26,0.88) 0%, rgba(8,15,26,0.1) 60%);
+    }
+    .todo-card-body {
+      position: absolute; bottom: 0; left: 0; right: 0; padding: 28px 30px;
+    }
+    .todo-distance {
+      font-size: 0.6rem; letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 8px;
+    }
+    .todo-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem; font-weight: 300; color: var(--white);
+      line-height: 1.15; margin-bottom: 10px;
+    }
+    .todo-desc { font-size: 0.76rem; line-height: 1.65; color: rgba(245,240,232,0.65); }
+
+    /* ─── SEASONS ─── */
+    .seasons-section { background: var(--slate); }
+    .seasons-tabs {
+      display: flex; gap: 0; margin-top: 52px; margin-bottom: 0;
+      border-bottom: 1px solid rgba(200,169,108,0.2);
+    }
+    .season-tab {
+      flex: 1; padding: 18px 10px; text-align: center;
+      font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--mist); cursor: pointer; border: none; background: none;
+      border-bottom: 2px solid transparent; margin-bottom: -1px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .season-tab:hover { color: var(--ivory); }
+    .season-tab.active { color: var(--gold); border-bottom-color: var(--gold); }
+    .season-panels { padding: 52px 0 0; }
+    .season-panel { display: none; }
+    .season-panel.active { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+    .season-panel img {
+      width: 100%; height: 420px; object-fit: cover;
+      border: 1px solid rgba(200,169,108,0.15);
+    }
+    .season-content {}
+    .season-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.4rem; font-weight: 300; color: var(--ivory);
+      margin-bottom: 22px; line-height: 1.1;
+    }
+    .season-title em { font-style: italic; color: var(--gold-lt); }
+    .season-text { font-size: 0.9rem; line-height: 1.85; color: rgba(245,240,232,0.65); margin-bottom: 28px; }
+    .season-highlights { display: flex; flex-direction: column; gap: 12px; }
+    .season-hl {
+      display: flex; align-items: flex-start; gap: 14px;
+      font-size: 0.82rem; color: rgba(245,240,232,0.7);
+    }
+    .season-hl::before {
+      content: ''; width: 5px; height: 5px; border-radius: 50%;
+      background: var(--gold); flex-shrink: 0; margin-top: 7px;
+    }
+
+    /* ─── LOCATION ─── */
+    .location-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 88px; align-items: center; }
+    .map-frame { position: relative; height: 500px; overflow: hidden; }
+    .map-frame iframe { width: 100%; height: 100%; border: none; filter: saturate(0.25) brightness(0.65) contrast(1.1); }
+    .map-frame::after { content: ''; position: absolute; inset: 0; border: 1px solid rgba(200,169,108,0.28); pointer-events: none; }
+    .distances { display: flex; flex-direction: column; gap: 0; }
+    .dist-row {
+      display: flex; align-items: center; gap: 24px;
+      padding: 26px 0; border-bottom: 1px solid rgba(200,169,108,0.12);
+    }
+    .dist-time {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.2rem; font-weight: 300; color: var(--gold);
+      min-width: 90px; line-height: 1;
+    }
+    .dist-place { font-size: 0.9rem; font-weight: 400; color: var(--ivory); }
+    .dist-note { font-size: 0.74rem; color: var(--mist); margin-top: 3px; }
+
+    /* ─── HOUSE RULES / FAQ ─── */
+    .rules-faq-section { background: var(--deep); }
+    .rules-faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 88px; margin-top: 56px; }
+    .rules-list { display: flex; flex-direction: column; gap: 0; }
+    .rule-row {
+      display: flex; align-items: flex-start; gap: 20px;
+      padding: 22px 0; border-bottom: 1px solid rgba(200,169,108,0.1);
+    }
+    .rule-icon { color: var(--gold); flex-shrink: 0; margin-top: 2px; }
+    .rule-label { font-size: 0.78rem; font-weight: 500; color: var(--ivory); margin-bottom: 4px; letter-spacing: 0.05em; }
+    .rule-val { font-size: 0.78rem; color: var(--mist); }
+    /* FAQ accordion */
+    .faq-list { display: flex; flex-direction: column; gap: 0; }
+    .faq-item { border-bottom: 1px solid rgba(200,169,108,0.12); }
+    .faq-q {
+      width: 100%; background: none; border: none; text-align: left;
+      padding: 22px 0; display: flex; justify-content: space-between; align-items: center;
+      cursor: pointer; font-family: 'Jost', sans-serif;
+      font-size: 0.85rem; font-weight: 400; color: var(--ivory);
+      letter-spacing: 0.03em; transition: color 0.2s;
+    }
+    .faq-q:hover { color: var(--gold); }
+    .faq-q .faq-icon {
+      color: var(--gold); flex-shrink: 0; margin-left: 16px;
+      transition: transform 0.3s;
+    }
+    .faq-item.open .faq-icon { transform: rotate(45deg); }
+    .faq-a {
+      max-height: 0; overflow: hidden;
+      transition: max-height 0.38s ease, padding 0.3s;
+    }
+    .faq-a-inner {
+      font-size: 0.82rem; line-height: 1.82;
+      color: rgba(245,240,232,0.6); padding-bottom: 20px;
+    }
+    .faq-item.open .faq-a { max-height: 220px; }
+
+    /* ─── BOOKING ─── */
+    .booking-section { background: var(--deep); padding: 110px 64px; text-align: center; }
+    .booking-inner { max-width: 760px; margin: 0 auto; }
+    .gold-rule { width: 52px; height: 1px; background: var(--gold); margin: 22px auto 40px; }
+    .booking-intro { font-size: 0.96rem; line-height: 1.85; color: rgba(245,240,232,0.65); margin-bottom: 52px; }
+    .booking-box {
+      background: var(--slate); border: 1px solid rgba(200,169,108,0.22);
+      padding: 56px 48px; margin-bottom: 20px;
+    }
+    .booking-box-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem; font-weight: 300; color: var(--ivory); margin-bottom: 10px;
+    }
+    .booking-box-sub { font-size: 0.78rem; color: var(--mist); margin-bottom: 36px; }
+    .book-btn {
+      display: inline-flex; align-items: center; gap: 12px;
+      background: var(--gold); color: var(--deep); text-decoration: none;
+      font-size: 0.72rem; font-weight: 600; letter-spacing: 0.22em;
+      text-transform: uppercase; padding: 18px 48px;
+      transition: background 0.2s, transform 0.18s;
+    }
+    .book-btn:hover { background: var(--gold-lt); transform: translateY(-2px); }
+    .booking-note { font-size: 0.7rem; color: rgba(143,163,176,0.6); margin-top: 14px; }
+
+    /* ─── CONTACT FORM ─── */
+    .contact-section { background: var(--slate); padding: 110px 64px; }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 88px; align-items: start; }
+    .contact-info {}
+    .contact-detail { display: flex; align-items: flex-start; gap: 18px; margin-bottom: 28px; }
+    .contact-detail-icon { color: var(--gold); flex-shrink: 0; margin-top: 2px; }
+    .contact-detail-label {
+      font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--mist); margin-bottom: 5px;
+    }
+    .contact-detail-val { font-size: 0.9rem; color: var(--ivory); }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-bottom: 18px; }
+    .form-group { display: flex; flex-direction: column; gap: 8px; margin-bottom: 18px; }
+    .form-group.full { grid-column: 1 / -1; }
+    .form-label { font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--mist); }
+    .form-input, .form-select, .form-textarea {
+      background: rgba(255,255,255,0.04); border: 1px solid rgba(200,169,108,0.22);
+      color: var(--ivory); font-family: 'Jost', sans-serif; font-size: 0.88rem;
+      padding: 14px 18px; outline: none; width: 100%;
+      transition: border-color 0.2s;
+    }
+    .form-input:focus, .form-select:focus, .form-textarea:focus {
+      border-color: rgba(200,169,108,0.6);
+    }
+    .form-input::placeholder, .form-textarea::placeholder { color: rgba(143,163,176,0.45); }
+    .form-select { appearance: none; cursor: pointer; }
+    .form-select option { background: var(--slate); }
+    .form-textarea { resize: vertical; min-height: 120px; }
+    .form-submit {
+      background: var(--gold); color: var(--deep); border: none;
+      font-family: 'Jost', sans-serif; font-size: 0.72rem; font-weight: 600;
+      letter-spacing: 0.22em; text-transform: uppercase;
+      padding: 18px 48px; cursor: pointer;
+      transition: background 0.2s, transform 0.18s; width: 100%;
+    }
+    .form-submit:hover { background: var(--gold-lt); transform: translateY(-2px); }
+    .form-success {
+      display: none; background: rgba(200,169,108,0.1);
+      border: 1px solid rgba(200,169,108,0.3);
+      padding: 20px 24px; text-align: center;
+      font-size: 0.85rem; color: var(--gold-lt); margin-top: 14px;
+    }
+
+    /* ─── STICKY BOOK BAR (mobile) ─── */
+    .sticky-bar {
+      display: none;
+      position: fixed; bottom: 0; left: 0; right: 0; z-index: 150;
+      background: rgba(8,15,26,0.97); backdrop-filter: blur(12px);
+      border-top: 1px solid rgba(200,169,108,0.22);
+      padding: 14px 24px;
+      align-items: center; justify-content: space-between;
+      gap: 14px;
+      transform: translateY(100%);
+      transition: transform 0.4s cubic-bezier(0.16,1,0.3,1);
+    }
+    .sticky-bar.visible { transform: translateY(0); }
+    .sticky-bar-info { display: flex; flex-direction: column; gap: 2px; }
+    .sticky-bar-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem; color: var(--ivory);
+    }
+    .sticky-bar-sub { font-size: 0.62rem; letter-spacing: 0.1em; color: var(--mist); }
+    .sticky-bar-btn {
+      flex-shrink: 0; background: var(--gold); color: var(--deep);
+      text-decoration: none; font-size: 0.68rem; font-weight: 600;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      padding: 13px 26px;
+      transition: background 0.2s;
+    }
+    .sticky-bar-btn:hover { background: var(--gold-lt); }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--deep); border-top: 1px solid rgba(200,169,108,0.18);
+      padding: 56px 64px;
+      display: flex; justify-content: space-between; align-items: center;
+      gap: 32px; flex-wrap: wrap;
+    }
+    .footer-brand { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; color: var(--gold); letter-spacing: 0.1em; }
+    .footer-brand span {
+      display: block; font-family: 'Jost', sans-serif; font-size: 0.65rem;
+      letter-spacing: 0.18em; text-transform: uppercase; color: var(--mist); margin-top: 4px;
+    }
+    .footer-nav { display: flex; gap: 36px; list-style: none; }
+    .footer-nav a {
+      font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--mist); text-decoration: none; transition: color 0.2s;
+    }
+    .footer-nav a:hover { color: var(--gold); }
+    .footer-copy { font-size: 0.66rem; color: rgba(143,163,176,0.45); }
+
+    /* ─── REVEAL ─── */
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 960px) {
+      nav, nav.scrolled { padding: 18px 24px; }
+      .nav-links { display: none; }
+      .hero-content { left: 24px; right: 24px; bottom: 60px; }
+      .hero-scroll-indicator { right: 24px; }
+      .section { padding: 72px 24px; }
+      .gallery-header { padding: 72px 24px 40px; }
+      .stat-item { padding: 22px 28px; flex: 0 0 33.3%; }
+      .stat-item + .stat-item::before { display: none; }
+      .experience-grid { grid-template-columns: 1fr; gap: 44px; }
+      .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(5, 220px);
+      }
+      .g-item:nth-child(1) { grid-row: auto; grid-column: 1 / 3; }
+      .g-item:nth-child(8) { grid-column: 1 / 3; }
+      .amenities-grid { grid-template-columns: repeat(2, 1fr); gap: 36px 24px; }
+      .todo-grid { grid-template-columns: 1fr; }
+      .todo-card { height: 280px; }
+      .season-panel.active { grid-template-columns: 1fr; gap: 36px; }
+      .location-grid { grid-template-columns: 1fr; gap: 44px; }
+      .map-frame { height: 340px; }
+      .rules-faq-grid { grid-template-columns: 1fr; gap: 44px; }
+      .contact-grid { grid-template-columns: 1fr; gap: 44px; }
+      .form-row { grid-template-columns: 1fr; }
+      footer { flex-direction: column; text-align: center; }
+      .footer-nav { flex-wrap: wrap; justify-content: center; }
+      .booking-section { padding: 72px 24px; }
+      .booking-box { padding: 36px 24px; }
+      .contact-section { padding: 72px 24px; }
+      .sticky-bar { display: flex; }
+    }
+    @media (max-width: 560px) {
+      .stat-item { flex: 0 0 50%; }
+      .hero-title { font-size: 3.4rem; }
+      .amenities-grid { grid-template-columns: 1fr; }
+      .lb-prev { left: -44px; } .lb-next { right: -44px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════ NAV ═══════════ -->
+<nav id="navbar">
+  <a class="nav-logo" href="#">The Pinnacle</a>
+  <ul class="nav-links">
+    <li><a href="#experience">The Estate</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#todo">Explore</a></li>
+    <li><a href="#amenities">Amenities</a></li>
+    <li><a href="#location">Location</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#booking" class="nav-book">Book Now</a>
+</nav>
+
+
+<!-- ═══════════ HERO ═══════════ -->
+<div class="hero">
+  <!-- Fallback photo (always shown first; hidden once video is ready) -->
+  <img class="hero-img" id="heroImg"
+    src="https://view.com.au/viewstatic/images/listing/6-bedroom-house-in-otford-nsw-2508/800-w/15991165-1-004CB6E.jpg"
+    alt="Panoramic ocean view from The Pinnacle, Otford" />
+
+  <!-- YouTube video background (muted, autoplay, loop) -->
+  <div class="hero-video-wrap" id="heroVideoWrap" style="opacity:0;transition:opacity 1.2s ease;">
+    <iframe id="heroYT"
+      src="https://www.youtube.com/embed/5HZuNE6HUs4?autoplay=1&mute=1&loop=1&playlist=5HZuNE6HUs4&controls=0&showinfo=0&rel=0&disablekb=1&modestbranding=1&enablejsapi=1"
+      allow="autoplay; encrypted-media"
+      allowfullscreen
+      title="The Pinnacle property video">
+    </iframe>
+  </div>
+
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <span class="hero-eyebrow">Otford · Northern Illawarra Coast · NSW</span>
+    <h1 class="hero-title">The<br><em>Pinnacle</em></h1>
+    <p class="hero-sub">6 Bedrooms &nbsp;·&nbsp; 25m Infinity Pool &nbsp;·&nbsp; 200° Ocean Views &nbsp;·&nbsp; 2.4 Acres</p>
+    <a href="#booking" class="hero-cta">
+      Reserve Your Stay
+      <svg width="18" height="12" viewBox="0 0 18 12" fill="none">
+        <path d="M11 1l6 5-6 5M1 6h16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+  </div>
+  <div class="hero-scroll-indicator">
+    <div class="scroll-line"></div>
+    <span>Explore</span>
+  </div>
+</div>
+
+
+<!-- ═══════════ STATS BAR ═══════════ -->
+<div class="stats-bar">
+  <div class="stat-item reveal"><div class="stat-num">6</div><div class="stat-label">Bedrooms</div></div>
+  <div class="stat-item reveal"><div class="stat-num">4</div><div class="stat-label">Bathrooms</div></div>
+  <div class="stat-item reveal"><div class="stat-num">25m</div><div class="stat-label">Infinity Pool</div></div>
+  <div class="stat-item reveal"><div class="stat-num">200°</div><div class="stat-label">Ocean Views</div></div>
+  <div class="stat-item reveal"><div class="stat-num">2.4</div><div class="stat-label">Acres</div></div>
+  <div class="stat-item reveal"><div class="stat-num">10</div><div class="stat-label">Car Garage</div></div>
+</div>
+
+
+<!-- ═══════════ EXPERIENCE ═══════════ -->
+<section class="section" id="experience">
+  <div class="experience-grid">
+    <div>
+      <span class="eyebrow">The Estate</span>
+      <h2 class="section-title">Where the Ocean<br>Meets <em>Luxury</em></h2>
+      <p class="body-text">One of only a handful of true prestige properties along the Northern Illawarra coastline, The Pinnacle commands an elevated position that delivers both absolute privacy and breathtaking 200° views extending along the coast and out over the Pacific.</p>
+      <p class="body-text">Every morning brings a new horizon — watch the sun rise over the ocean from the comfort of your bed, spot migrating whales offshore, or follow dolphins from the deck. Photos cannot do justice to the extraordinary outlook this property commands.</p>
+      <p class="body-text">Set on 9,718m² perched high on the hilltop, surrounded by native bush and overlooking ocean and valley below, this is the ultimate coastal escape — within an hour of Sydney, yet worlds away from it.</p>
+    </div>
+    <div class="highlights">
+      <div class="highlight reveal">
+        <div class="highlight-name">Master Suite</div>
+        <div class="highlight-desc">Occupying the entire top floor: an immense main bedroom, a walk-in robe of equal proportions, a lavish ensuite — and panoramic ocean views the moment you open your eyes.</div>
+      </div>
+      <div class="highlight reveal">
+        <div class="highlight-name">25m Infinity Pool &amp; Spa</div>
+        <div class="highlight-desc">Engineered into the deck with the horizon as its edge, the infinity pool is both an architectural feat and an unforgettable experience — the ideal setting for long summer evenings.</div>
+      </div>
+      <div class="highlight reveal">
+        <div class="highlight-name">Gourmet Kitchen</div>
+        <div class="highlight-desc">A chef's dream featuring a spacious walk-in pantry, island bench with breakfast bar, and views that make every meal an occasion.</div>
+      </div>
+      <div class="highlight reveal">
+        <div class="highlight-name">The Gallery Garage</div>
+        <div class="highlight-desc">250m² of concrete-floored showroom for up to 10 vehicles — as much gallery as garage — alongside ample storage and a stable on the grounds.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════ GALLERY ═══════════ -->
+<div class="gallery-section" id="gallery">
+  <div class="gallery-header">
+    <span class="eyebrow">Gallery</span>
+    <h2 class="section-title">A Residence<br>Like No <em>Other</em></h2>
+  </div>
+  <div class="gallery-grid" id="galleryGrid">
+    <div class="g-item" data-index="0">
+      <img src="https://view.com.au/viewstatic/images/listing/6-bedroom-house-in-otford-nsw-2508/800-w/15991165-1-004CB6E.jpg" alt="Panoramic ocean view" loading="lazy" />
+      <div class="g-item-overlay"></div>
+      <span class="g-label">Panoramic Views</span>
+    </div>
+    <div class="g-item" data-index="1">
+      <img src="https://view.com.au/viewstatic/images/listing/6-bedroom-house-in-otford-nsw-2508/800-w/15991165-2-BC88B85.jpg" alt="Property exterior" loading="lazy" />
+      <div class="g-item-overlay"></div>
+    </div>
+    <div class="g-item" data-index="2">
+      <img src="https://view.com.au/viewstatic/images/listing/6-bedroom-house-in-otford-nsw-2508/800-w/15991165-3-2A49F67.jpg" alt="Living spaces" loading="lazy" />
+      <div class="g-item-overlay"></div>
+    </div>
+    <div class="g-item" data-index="3">
+      <img src="https://view.com.au/viewstatic/images/listing/6-bedroom-house-in-otford-nsw-2508/800-w/15991165-4-5DE3D7D.jpg" alt="Interior" loading="lazy" />
+      <div class="g-item-overlay"></div>
+    </div>
+    <div class="g-item" data-index="4">
+      <img src="https://view.com.au/viewstatic/images/listing/6-bedroom-house-in-otford-nsw-2508/800-w/15991165-5-5524B8C.jpg" alt="Kitchen & dining" loading="lazy" />
+      <div class="g-item-overlay"></div>
+    </div>
+    <div class="g-item" data-index="5">
+      <img src="https://view.com.au/viewstatic/images/listing/6-bedroom-house-in-otford-nsw-2508/800-w/15991165-6-30562E5.jpg" alt="Bedroom" loading="lazy" />
+      <div class="g-item-overlay"></div>
+    </div>
+    <div class="g-item" data-index="6">
+      <img src="https://view.com.au/viewstatic/images/listing/6-bedroom-house-in-otford-nsw-2508/800-w/15991165-7-C796ABA.jpg" alt="Pool & deck" loading="lazy" />
+      <div class="g-item-overlay"></div>
+      <span class="g-label">Infinity Pool</span>
+    </div>
+    <div class="g-item" data-index="7">
+      <img src="https://view.com.au/viewstatic/images/listing/6-bedroom-house-in-otford-nsw-2508/800-w/15991165-8-AEAE712.jpg" alt="Outdoor entertaining" loading="lazy" />
+      <div class="g-item-overlay"></div>
+    </div>
+    <div class="g-item" data-index="8">
+      <img src="https://view.com.au/viewstatic/images/listing/6-bedroom-house-in-otford-nsw-2508/800-w/15991165-21-340B518.jpg" alt="Estate grounds" loading="lazy" />
+      <div class="g-item-overlay"></div>
+      <span class="g-label">Estate Grounds</span>
+    </div>
+  </div>
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true">
+  <div class="lightbox-inner">
+    <button class="lb-close" id="lbClose">✕ &nbsp;Close</button>
+    <button class="lb-btn lb-prev" id="lbPrev">&#8592;</button>
+    <img id="lbImg" src="" alt="Property photo" />
+    <button class="lb-btn lb-next" id="lbNext">&#8594;</button>
+    <div class="lb-counter" id="lbCounter"></div>
+  </div>
+</div>
+
+
+<!-- ═══════════ THINGS TO DO ═══════════ -->
+<section class="section todo-section" id="todo">
+  <span class="eyebrow">Explore</span>
+  <h2 class="section-title">At Your<br><em>Doorstep</em></h2>
+  <div class="todo-grid">
+
+    <div class="todo-card">
+      <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&q=80" alt="Seacliff Bridge" loading="lazy" />
+      <div class="todo-card-overlay"></div>
+      <div class="todo-card-body">
+        <div class="todo-distance">5 min drive</div>
+        <div class="todo-name">Seacliff Bridge</div>
+        <div class="todo-desc">One of Australia's most iconic coastal roads, curving above the ocean cliffs. Walk it at dawn for the view of a lifetime.</div>
+      </div>
+    </div>
+
+    <div class="todo-card">
+      <img src="https://images.unsplash.com/photo-1504893524553-b855bce32c67?w=900&q=80" alt="Royal National Park" loading="lazy" />
+      <div class="todo-card-overlay"></div>
+      <div class="todo-card-body">
+        <div class="todo-distance">Walking distance</div>
+        <div class="todo-name">Royal National Park</div>
+        <div class="todo-desc">Australia's first national park and one of the world's great wilderness areas — pristine beaches, waterfalls and ancient coastal walks begin steps from the gate.</div>
+      </div>
+    </div>
+
+    <div class="todo-card">
+      <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=900&q=80" alt="Otford Beach" loading="lazy" />
+      <div class="todo-card-overlay"></div>
+      <div class="todo-card-body">
+        <div class="todo-distance">5 min drive</div>
+        <div class="todo-name">Coastal Beaches</div>
+        <div class="todo-desc">Secluded surf beaches, sheltered rock pools and dramatic sea cliffs — the Northern Illawarra coast offers something for every swimmer and surfer.</div>
+      </div>
+    </div>
+
+    <div class="todo-card">
+      <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=900&q=80" alt="Whale watching" loading="lazy" />
+      <div class="todo-card-overlay"></div>
+      <div class="todo-card-body">
+        <div class="todo-distance">From the deck</div>
+        <div class="todo-name">Whale Watching</div>
+        <div class="todo-desc">Humpback and southern right whales migrate past between May and November. Watch them breach from the pool deck over your morning coffee.</div>
+      </div>
+    </div>
+
+    <div class="todo-card">
+      <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=900&q=80" alt="Wollongong dining" loading="lazy" />
+      <div class="todo-card-overlay"></div>
+      <div class="todo-card-body">
+        <div class="todo-distance">30 min drive</div>
+        <div class="todo-name">Wollongong Dining</div>
+        <div class="todo-desc">Wollongong's thriving restaurant and café scene is just 30 minutes south — from casual beachside breakfasts to world-class waterfront dining.</div>
+      </div>
+    </div>
+
+    <div class="todo-card">
+      <img src="https://images.unsplash.com/photo-1499678329028-101435549a4e?w=900&q=80" alt="Sunrise walks" loading="lazy" />
+      <div class="todo-card-overlay"></div>
+      <div class="todo-card-body">
+        <div class="todo-distance">At your feet</div>
+        <div class="todo-name">Sunrise Walks</div>
+        <div class="todo-desc">The Otford Lookout and coastal walking tracks deliver extraordinary sunrises. Walk out and watch the Pacific light up in gold and rose each morning.</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══════════ SEASONS ═══════════ -->
+<section class="section seasons-section" id="seasons">
+  <span class="eyebrow">When to Visit</span>
+  <h2 class="section-title">Every Season<br>Has Its <em>Magic</em></h2>
+
+  <div class="seasons-tabs">
+    <button class="season-tab active" data-season="summer">Summer</button>
+    <button class="season-tab" data-season="autumn">Autumn</button>
+    <button class="season-tab" data-season="winter">Winter</button>
+    <button class="season-tab" data-season="spring">Spring</button>
+  </div>
+
+  <div class="season-panels">
+
+    <div class="season-panel active" id="season-summer">
+      <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&q=80" alt="Summer at The Pinnacle" loading="lazy" />
+      <div class="season-content">
+        <div class="season-title">Long Days,<br><em>Endless Pool</em></div>
+        <div class="season-text">December through February delivers the best of coastal living — warm ocean breezes, long golden evenings by the infinity pool, and the Pacific at its most inviting. The 25m pool becomes the centrepiece of every day.</div>
+        <div class="season-highlights">
+          <div class="season-hl">Warm ocean swimming and surfing at nearby beaches</div>
+          <div class="season-hl">Evening pool parties with ocean views and long sunsets</div>
+          <div class="season-hl">Dolphin pods frequent the coastline through summer</div>
+          <div class="season-hl">Peak holiday season — book well in advance</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="season-panel" id="season-autumn">
+      <img src="https://images.unsplash.com/photo-1476820865390-c52aeebb9891?w=1200&q=80" alt="Autumn at The Pinnacle" loading="lazy" />
+      <div class="season-content">
+        <div class="season-title">Golden Light,<br><em>Still Waters</em></div>
+        <div class="season-text">March to May brings mild temperatures, thinner crowds and extraordinary quality of light over the ocean. One of the best times for hiking and photography, with the landscape alive in colour.</div>
+        <div class="season-highlights">
+          <div class="season-hl">Ideal conditions for Royal National Park hiking</div>
+          <div class="season-hl">Humpback whale migration begins in May</div>
+          <div class="season-hl">Cooler evenings perfect for entertaining indoors</div>
+          <div class="season-hl">Quieter beaches — often deserted on weekdays</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="season-panel" id="season-winter">
+      <img src="https://images.unsplash.com/photo-1547036967-23d11aacaee0?w=1200&q=80" alt="Winter at The Pinnacle" loading="lazy" />
+      <div class="season-content">
+        <div class="season-title">Storm Skies<br>&amp; <em>Whale Song</em></div>
+        <div class="season-text">June to August transforms the estate into a dramatic coastal retreat. Watch wild seas from the warmth of the living room, and witness humpback and southern right whales breaching just offshore during peak migration season.</div>
+        <div class="season-highlights">
+          <div class="season-hl">Peak whale watching season — daily sightings from the deck</div>
+          <div class="season-hl">Dramatic ocean storms and wild seas</div>
+          <div class="season-hl">Crisp clear days with extraordinary visibility</div>
+          <div class="season-hl">Lowest rates and peak availability</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="season-panel" id="season-spring">
+      <img src="https://images.unsplash.com/photo-1552083375-1447ce886485?w=1200&q=80" alt="Spring at The Pinnacle" loading="lazy" />
+      <div class="season-content">
+        <div class="season-title">Wildflowers<br>&amp; <em>Ocean Blue</em></div>
+        <div class="season-text">September to November is arguably the most beautiful time on this coastline — the Royal National Park erupts in native wildflowers, the ocean turns vivid blue, and the weather is warm enough for the pool but crisp enough for long walks.</div>
+        <div class="season-highlights">
+          <div class="season-hl">Native wildflowers bloom throughout the national park</div>
+          <div class="season-hl">Warming ocean temperatures — ideal for swimming</div>
+          <div class="season-hl">Southern right whales still visible through October</div>
+          <div class="season-hl">Perfect shoulder-season rates before Christmas rush</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══════════ AMENITIES ═══════════ -->
+<section class="section amenities-section" id="amenities">
+  <span class="eyebrow">Amenities</span>
+  <h2 class="section-title">Everything You<br>Could <em>Desire</em></h2>
+  <div class="amenities-grid">
+    <div class="amenity reveal">
+      <div class="amenity-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M2 12c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/><path d="M2 17c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/><path d="M8 6l2-3 2 3 2-3 2 3"/><line x1="14" y1="6" x2="14" y2="12"/></svg>
+      </div>
+      <div class="amenity-name">25m Infinity Pool</div>
+      <div class="amenity-desc">Heated infinity pool and spa set into the deck, with uninterrupted ocean views to the horizon.</div>
+    </div>
+    <div class="amenity reveal">
+      <div class="amenity-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/><polyline points="9,22 9,12 15,12 15,22"/></svg>
+      </div>
+      <div class="amenity-name">6 Bedrooms</div>
+      <div class="amenity-desc">Master suite on the entire top floor; lower level ideal as parent's retreat or guest accommodation.</div>
+    </div>
+    <div class="amenity reveal">
+      <div class="amenity-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 22V12a4 4 0 014-4h8a4 4 0 014 4v10"/><path d="M2 22h20"/><path d="M7 22v-4h10v4"/><circle cx="12" cy="6" r="2"/></svg>
+      </div>
+      <div class="amenity-name">4 Bathrooms</div>
+      <div class="amenity-desc">Beautifully appointed throughout, including the exceptional master ensuite on the top floor.</div>
+    </div>
+    <div class="amenity reveal">
+      <div class="amenity-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="1" y="8" width="22" height="12" rx="2"/><path d="M5 8V6a2 2 0 012-2h10a2 2 0 012 2v2"/><line x1="12" y1="12" x2="12" y2="16"/></svg>
+      </div>
+      <div class="amenity-name">10-Car Garage</div>
+      <div class="amenity-desc">250m² gallery-style garage with concrete flooring — a showroom for your vehicles and coastal toys.</div>
+    </div>
+    <div class="amenity reveal">
+      <div class="amenity-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="9"/><path d="M3.6 9h16.8M3.6 15h16.8"/><path d="M12 3a15 15 0 010 18M12 3a15 15 0 000 18"/></svg>
+      </div>
+      <div class="amenity-name">Panoramic Views</div>
+      <div class="amenity-desc">200° ocean and coastal views from virtually every room — watch whales, dolphins and sunrises daily.</div>
+    </div>
+    <div class="amenity reveal">
+      <div class="amenity-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 22s8-4.5 8-10V5l-8-3-8 3v7c0 5.5 8 10 8 10z"/></svg>
+      </div>
+      <div class="amenity-name">Private Gated Entry</div>
+      <div class="amenity-desc">Fully secured with private gated entry on 9,718m² of grounds — absolute privacy guaranteed.</div>
+    </div>
+    <div class="amenity reveal">
+      <div class="amenity-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M6 2l1 4h10l1-4"/><path d="M3 6h18v2a6 6 0 01-6 6H9A6 6 0 013 8V6z"/><path d="M9 22V14M15 22V14"/></svg>
+      </div>
+      <div class="amenity-name">Gourmet Kitchen</div>
+      <div class="amenity-desc">Walk-in pantry, island bench, breakfast bar and sweeping ocean views — cooking becomes an event.</div>
+    </div>
+    <div class="amenity reveal">
+      <div class="amenity-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+      </div>
+      <div class="amenity-name">Sleeps up to 12</div>
+      <div class="amenity-desc">Open-plan upper level plus versatile lower-level guest wing — ideal for families and groups.</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════ LOCATION ═══════════ -->
+<section class="section" id="location">
+  <div class="location-grid">
+    <div class="map-frame">
+      <iframe
+        src="https://maps.google.com/maps?q=14+Lady+Wakehurst+Drive+Otford+NSW+2508+Australia&output=embed&z=13"
+        title="The Pinnacle location map" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <div>
+      <span class="eyebrow">Location</span>
+      <h2 class="section-title">The Coast at<br>Your <em>Doorstep</em></h2>
+      <p class="body-text" style="margin-bottom:40px;">Otford sits at the meeting point of the Royal National Park and the Northern Illawarra coastline — one of the most pristine coastal corridors in New South Wales. Swimming, surfing, hiking, rock-pooling and sunrise walks are all within moments of the estate.</p>
+      <div class="distances">
+        <div class="dist-row reveal">
+          <div class="dist-time">1 hr</div>
+          <div><div class="dist-place">Sydney CBD</div><div class="dist-note">Via Princes Motorway · Train service available</div></div>
+        </div>
+        <div class="dist-row reveal">
+          <div class="dist-time">30 min</div>
+          <div><div class="dist-place">Wollongong CBD</div><div class="dist-note">Via Lawrence Hargrave Drive</div></div>
+        </div>
+        <div class="dist-row reveal">
+          <div class="dist-time">5 min</div>
+          <div><div class="dist-place">Seacliff Bridge &amp; Beach</div><div class="dist-note">Iconic coastal landmark · swimming &amp; surfing</div></div>
+        </div>
+        <div class="dist-row reveal">
+          <div class="dist-time">Walk</div>
+          <div><div class="dist-place">Royal National Park Entry</div><div class="dist-note">Pristine hiking trails &amp; secluded ocean beaches</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════ HOUSE RULES & FAQ ═══════════ -->
+<section class="section rules-faq-section" id="rules">
+  <div class="rules-faq-grid">
+
+    <!-- HOUSE RULES -->
+    <div>
+      <span class="eyebrow">House Rules</span>
+      <h2 class="section-title" style="margin-bottom:0;">Good to<br><em>Know</em></h2>
+      <div class="rules-list" style="margin-top:40px;">
+        <div class="rule-row">
+          <div class="rule-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
+          </div>
+          <div><div class="rule-label">Check-in</div><div class="rule-val">From 3:00 PM</div></div>
+        </div>
+        <div class="rule-row">
+          <div class="rule-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
+          </div>
+          <div><div class="rule-label">Check-out</div><div class="rule-val">By 10:00 AM</div></div>
+        </div>
+        <div class="rule-row">
+          <div class="rule-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+          </div>
+          <div><div class="rule-label">Maximum Guests</div><div class="rule-val">12 guests</div></div>
+        </div>
+        <div class="rule-row">
+          <div class="rule-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+          </div>
+          <div><div class="rule-label">Minimum Stay</div><div class="rule-val">2 nights · 3 nights on long weekends</div></div>
+        </div>
+        <div class="rule-row">
+          <div class="rule-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 2a3 3 0 000 6h4a3 3 0 000-6"/><path d="M6 8H4a2 2 0 00-2 2v10a2 2 0 002 2h16a2 2 0 002-2V10a2 2 0 00-2-2h-2"/></svg>
+          </div>
+          <div><div class="rule-label">Pets</div><div class="rule-val">Not permitted</div></div>
+        </div>
+        <div class="rule-row">
+          <div class="rule-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+          </div>
+          <div><div class="rule-label">Smoking</div><div class="rule-val">Outdoors only</div></div>
+        </div>
+        <div class="rule-row">
+          <div class="rule-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="11,5 2,12 11,19 11,5"/><polygon points="22,5 13,12 22,19 22,5"/></svg>
+          </div>
+          <div><div class="rule-label">Events &amp; Parties</div><div class="rule-val">Please enquire — subject to approval</div></div>
+        </div>
+        <div class="rule-row">
+          <div class="rule-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/></svg>
+          </div>
+          <div><div class="rule-label">WiFi</div><div class="rule-val">High-speed NBN included</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ -->
+    <div>
+      <span class="eyebrow">FAQ</span>
+      <h2 class="section-title" style="margin-bottom:0;">Frequently<br><em>Asked</em></h2>
+      <div class="faq-list" style="margin-top:40px;" id="faqList">
+
+        <div class="faq-item">
+          <button class="faq-q">
+            Is the pool heated?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">Yes — the 25m infinity pool and spa are both heated, so they're enjoyable year-round regardless of the season.</div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">
+            Where is the nearest supermarket?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">The nearest supermarket is in Helensburgh, approximately 8 minutes by car. Stanwell Park village has a small general store closer by. We recommend stocking up on arrival.</div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">
+            How far is the nearest beach?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">Otford Beach is just 5 minutes by car. Several more beaches within the Royal National Park are accessible via short hiking trails directly from the property boundary.</div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">
+            Is the property suitable for children?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">Yes — the estate has ample outdoor space for children to explore. Pool safety: children must be supervised at all times around the pool and spa area.</div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">
+            Is parking available?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">Absolutely — the 250m² gallery garage accommodates up to 10 vehicles, plus additional space on the driveway. No on-street parking needed.</div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">
+            Can we access Sydney by train?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">Yes — Otford station is a short walk from the property and offers direct rail services to Sydney CBD on the South Coast Line. Trains run regularly throughout the day.</div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">
+            Is linen and towels provided?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">Yes, all linen, towels, and pool towels are provided. The property is fully equipped for your stay — just bring your food and personal items.</div></div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══════════ BOOKING ═══════════ -->
+<section class="booking-section" id="booking">
+  <div class="booking-inner">
+    <span class="eyebrow" style="display:block;text-align:center;">Reservations</span>
+    <h2 class="section-title" style="text-align:center;">Reserve Your<br><em>Escape</em></h2>
+    <div class="gold-rule"></div>
+    <p class="booking-intro">Check availability and book your stay directly. All reservations are managed securely through OwnerRez. A minimum two-night stay applies; extended stays and special requests are warmly welcomed.</p>
+    <div class="booking-box">
+      <div class="booking-box-title">Check Availability</div>
+      <div class="booking-box-sub">Secure your dates instantly via our booking portal</div>
+      <!--
+        OwnerRez: replace YOUR_PROPERTY_KEY with your key from
+        OwnerRez dashboard → Properties → [property] → Details
+        OPTION A (embedded): add ownerrez.js script + widget div here
+        OPTION B (link below): update href with your property key
+      -->
+      <a href="https://bookings.ownerrez.com/request/YOUR_PROPERTY_KEY" class="book-btn" target="_blank" rel="noopener noreferrer">
+        Check Availability &amp; Book
+        <svg width="16" height="10" viewBox="0 0 16 10" fill="none"><path d="M10 1l5 4-5 4M1 5h14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <p class="booking-note">You'll be taken to our secure booking portal to select your dates and complete your reservation.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════ CONTACT ═══════════ -->
+<section class="section contact-section" id="contact">
+  <div class="contact-grid">
+    <div>
+      <span class="eyebrow">Contact</span>
+      <h2 class="section-title">Get in<br><em>Touch</em></h2>
+      <p class="body-text" style="margin-bottom:44px;">For extended stays, special occasions, group bookings or any questions about the property — we're happy to help. We aim to respond within 24 hours.</p>
+      <div class="contact-detail">
+        <div class="contact-detail-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <div>
+          <div class="contact-detail-label">Address</div>
+          <div class="contact-detail-val">14 Lady Wakehurst Drive<br>Otford NSW 2508</div>
+        </div>
+      </div>
+      <div class="contact-detail">
+        <div class="contact-detail-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </div>
+        <div>
+          <div class="contact-detail-label">Email</div>
+          <!-- Replace with your actual email -->
+          <div class="contact-detail-val">hello@thepinnacleotford.com.au</div>
+        </div>
+      </div>
+      <div class="contact-detail">
+        <div class="contact-detail-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.01 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg>
+        </div>
+        <div>
+          <div class="contact-detail-label">Phone</div>
+          <!-- Replace with your actual phone number -->
+          <div class="contact-detail-val">+61 400 000 000</div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <form id="contactForm" novalidate>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="fname">First Name</label>
+            <input class="form-input" type="text" id="fname" name="fname" placeholder="Jane" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="lname">Last Name</label>
+            <input class="form-input" type="text" id="lname" name="lname" placeholder="Smith" required />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="email">Email</label>
+            <input class="form-input" type="email" id="email" name="email" placeholder="jane@email.com" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="phone">Phone</label>
+            <input class="form-input" type="tel" id="phone" name="phone" placeholder="+61 4xx xxx xxx" />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="checkin">Preferred Check-in</label>
+            <input class="form-input" type="date" id="checkin" name="checkin" />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="checkout">Preferred Check-out</label>
+            <input class="form-input" type="date" id="checkout" name="checkout" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="guests">Number of Guests</label>
+          <select class="form-select form-input" id="guests" name="guests">
+            <option value="">Select guests</option>
+            <option>1–2 guests</option>
+            <option>3–4 guests</option>
+            <option>5–6 guests</option>
+            <option>7–8 guests</option>
+            <option>9–10 guests</option>
+            <option>11–12 guests</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="message">Message</label>
+          <textarea class="form-textarea form-input" id="message" name="message" placeholder="Tell us about your stay — occasion, group, special requests…"></textarea>
+        </div>
+        <button type="submit" class="form-submit">Send Enquiry</button>
+        <div class="form-success" id="formSuccess">
+          ✓ &nbsp; Thank you — we'll be in touch within 24 hours.
+        </div>
+      </form>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer>
+  <div class="footer-brand">
+    The Pinnacle
+    <span>14 Lady Wakehurst Drive, Otford NSW 2508</span>
+  </div>
+  <ul class="footer-nav">
+    <li><a href="#experience">The Estate</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#todo">Explore</a></li>
+    <li><a href="#amenities">Amenities</a></li>
+    <li><a href="#location">Location</a></li>
+    <li><a href="#rules">House Rules</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#booking">Book Now</a></li>
+  </ul>
+  <div class="footer-copy">© 2025 The Pinnacle, Otford</div>
+</footer>
+
+
+<!-- ═══════════ STICKY BAR (mobile) ═══════════ -->
+<div class="sticky-bar" id="stickyBar">
+  <div class="sticky-bar-info">
+    <div class="sticky-bar-name">The Pinnacle</div>
+    <div class="sticky-bar-sub">Otford · 6 bed · 25m pool · Ocean views</div>
+  </div>
+  <a href="#booking" class="sticky-bar-btn">Book Now</a>
+</div>
+
+
+<!-- ═══════════ JAVASCRIPT ═══════════ -->
+<script>
+  // ── Nav sticky ──
+  const navbar = document.getElementById('navbar');
+  const stickyBar = document.getElementById('stickyBar');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 70);
+    stickyBar.classList.toggle('visible', window.scrollY > 500);
+  }, { passive: true });
+
+  // ── Video hero: fade in after 3s to let it buffer ──
+  const videoWrap = document.getElementById('heroVideoWrap');
+  const heroImg   = document.getElementById('heroImg');
+  setTimeout(() => {
+    videoWrap.style.opacity = '1';
+    videoWrap.style.zIndex  = '1';
+    heroImg.classList.add('hidden');
+  }, 3500);
+
+  // ── Lightbox ──
+  const galleryImgs = Array.from(document.querySelectorAll('#galleryGrid .g-item img')).map(i => ({ src: i.src, alt: i.alt }));
+  const lightbox = document.getElementById('lightbox');
+  const lbImg    = document.getElementById('lbImg');
+  const lbCounter = document.getElementById('lbCounter');
+  let lbIndex = 0;
+
+  function openLightbox(idx) {
+    lbIndex = idx;
+    lbImg.src = galleryImgs[idx].src.replace('800-w', '1200-w');
+    lbImg.alt = galleryImgs[idx].alt;
+    lbCounter.textContent = (idx + 1) + ' / ' + galleryImgs.length;
+    lightbox.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLightbox() {
+    lightbox.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  function moveLightbox(dir) {
+    lbIndex = (lbIndex + dir + galleryImgs.length) % galleryImgs.length;
+    lbImg.src = galleryImgs[lbIndex].src.replace('800-w', '1200-w');
+    lbImg.alt = galleryImgs[lbIndex].alt;
+    lbCounter.textContent = (lbIndex + 1) + ' / ' + galleryImgs.length;
+  }
+
+  document.querySelectorAll('#galleryGrid .g-item').forEach(item => {
+    item.addEventListener('click', () => openLightbox(+item.dataset.index));
+  });
+  document.getElementById('lbClose').addEventListener('click', closeLightbox);
+  document.getElementById('lbPrev').addEventListener('click', () => moveLightbox(-1));
+  document.getElementById('lbNext').addEventListener('click', () => moveLightbox(1));
+  lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+  document.addEventListener('keydown', e => {
+    if (!lightbox.classList.contains('open')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft')  moveLightbox(-1);
+    if (e.key === 'ArrowRight') moveLightbox(1);
+  });
+
+  // ── Season tabs ──
+  document.querySelectorAll('.season-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.season-tab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.season-panel').forEach(p => p.classList.remove('active'));
+      tab.classList.add('active');
+      document.getElementById('season-' + tab.dataset.season).classList.add('active');
+    });
+  });
+
+  // ── FAQ accordion ──
+  document.querySelectorAll('.faq-q').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const wasOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!wasOpen) item.classList.add('open');
+    });
+  });
+
+  // ── Contact form (demo — wire to your backend/Formspree/EmailJS) ──
+  document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const success = document.getElementById('formSuccess');
+    success.style.display = 'block';
+    this.reset();
+    setTimeout(() => { success.style.display = 'none'; }, 6000);
+    // To send real emails, replace this block with your preferred service:
+    // Formspree: fetch('https://formspree.io/f/YOUR_ID', { method:'POST', body: new FormData(this) })
+    // EmailJS:   emailjs.sendForm('service_id', 'template_id', this)
+  });
+
+  // ── Scroll reveal ──
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const siblings = entry.target.parentElement.querySelectorAll('.reveal');
+        let delay = 0;
+        siblings.forEach((sib, idx) => { if (sib === entry.target) delay = idx * 90; });
+        setTimeout(() => entry.target.classList.add('visible'), delay);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -48px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
